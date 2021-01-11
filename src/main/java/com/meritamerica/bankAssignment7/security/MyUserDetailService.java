@@ -10,7 +10,7 @@ import com.meritamerica.bankAssignment7.repositories.MyUserRepo;
 @Service
 public class MyUserDetailService implements UserDetailsService{
 	@Autowired
-	MyUserRepo userRepo;
+	MyUserRepo userRepo; //where the users are located
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

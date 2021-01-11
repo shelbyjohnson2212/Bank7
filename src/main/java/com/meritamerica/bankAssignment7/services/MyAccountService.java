@@ -78,3 +78,4 @@ public class MyAccountService {
 		AccountHolder acc = getMyAccountHolder(principal);
 		return acc.getCDAccounts();
 	}	
+}

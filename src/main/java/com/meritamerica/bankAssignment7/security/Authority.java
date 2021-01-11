@@ -1,5 +1,7 @@
 package com.meritamerica.bankAssignment7.security;
 
+import org.springframework.security.core.GrantedAuthority;
+
 //import com.meritamerica.bankAssignment7.security.GrantedAuthority;
 
 public class Authority implements GrantedAuthority {
