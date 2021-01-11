@@ -3,6 +3,7 @@ package com.meritamerica.bankAssignment7.models;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,9 +13,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.lang.NonNull;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.meritamerica.bankAssignment7.exceptions.ExceedsCombinedBalanceLimitException;
@@ -27,14 +31,14 @@ public class AccountHolder implements Comparable{
 		@Id
 		@Column(name="id")
 		private long id;
-		@NotNull(message="First name can not be Null")
-		@NotBlank(message="First name must not be empty")
+		@NotBlank(message="First name can not be Null")
+		@NotEmpty(message="First name must not be empty")
 	 	private String firstName;
 		private String middleName;
-	    @NotNull(message="Last name can not be Null")
-	    @NotBlank(message="Last name must not be empty")
+	    @NotBlank(message="Last name can not be Null")
+	    @NotEmpty(message="Last name must not be empty")
 	    private String lastName;
-	    @NotNull
+	    @NonNull
 	    @Size(min=9, message="SNN can not be less than 9 characters")
 	    private String ssn;
 	    
