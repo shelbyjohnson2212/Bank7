@@ -1,6 +1,7 @@
 package com.meritamerica.bankAssignment7.models;
 
 import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,8 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.*;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.meritamerica.bankAssignment7.exceptions.FieldErrorException;
 
@@ -17,10 +18,10 @@ import com.meritamerica.bankAssignment7.exceptions.FieldErrorException;
 @JsonIgnoreProperties(value = {"cdAccount"})
 public class CDOffering {
 	@NotNull
-	@Positive
+	@Min(value = 0)
 	private int term;
 	@NotNull
-	@Positive
+	@Min(value = 0)
 	private double interestRate;
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

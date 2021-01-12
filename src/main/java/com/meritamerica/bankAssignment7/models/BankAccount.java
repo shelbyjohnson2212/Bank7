@@ -9,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Positive;
+import javax.validation.constraints.*;
 
 import com.meritamerica.bankAssignment7.exceptions.FieldErrorException;
 
@@ -21,10 +20,10 @@ public class BankAccount {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="account_number")
 	protected long accountNumber;
-	@Positive
+	@Min(value = 0)
 	private double balance;
 	@NotNull
-	@Positive
+	@Min(value = 0)
 	private double interestRate;
 	private Date openDate;
 	@Transient

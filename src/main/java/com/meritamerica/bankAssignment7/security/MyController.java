@@ -24,7 +24,7 @@ public class MyController {
 	private JwtUtil jwtTokenUtil;
 	
 	@Autowired
-	private MyUserDetailsService userDetailsService;
+	private MyUserDetailService userDetailsService;
 	
 	@Autowired
 	private MyUserRepo myUserRepo;
